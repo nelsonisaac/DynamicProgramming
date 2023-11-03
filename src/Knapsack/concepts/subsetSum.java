@@ -12,7 +12,12 @@ public class subsetSum {
         
         for (int i = 1; i <= sum; i++)
             s[0][i] = false;
-		
+
+        
+// this logic is same as knapsack topdown approach
+// we subtract the given sum with every digit in the array and see if the diff exists
+// like 6-arr[i-1] = 3, so we check for 3's existence in the matrix
+// 3's existence is checked by 3-arr[i-1] = 0, which is true
 		for(int i=1;i<=n;i++) {
 			for(int j=1;j<=sum;j++) {
 				if(arr[i-1]<=j) {
