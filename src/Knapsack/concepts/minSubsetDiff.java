@@ -58,6 +58,8 @@ public class minSubsetDiff {
 			System.out.print(v.get(i));
 			System.out.print(" ");
 			
+// We are using mathematical approach, by solving equations s1+s2=R and s1-s2=min
+// We get min = R-2s1, we take min value by substituting all the s1 values from the vector			
 // The s2 or s1 value cannot exceed r/2, if so it gives negative values			
 			if(v.get(i)<=r/2) {
 				min1 = Math.min(min1,r - (2*v.get(i)));

@@ -4,10 +4,10 @@ public class countofSubSet {
 	static int countsubset(int[] arr,int sum, int n) {
 		int[][] s = new int[n+1][sum+1];
 		
-		for(int j=0; j <n; j++) {
+		for(int j=0; j <sum; j++) {
 			s[0][j] = 0;
 		}
-		for(int i=0; i<sum ; i++) {
+		for(int i=0; i<n ; i++) {
 			s[i][0] = 1;
 		}
 		
