@@ -27,14 +27,14 @@ public class SubsetCountwithDiff {
 				}
 			}
 		}
-		
-		System.out.println("matrix is");
-		for(int i=1;i<=n;i++) {
-			for(int j=1;j<=sum;j++) {
-				System.out.print(s[i][j]);
-			}
-			System.out.println(" ");
-		}
+			
+//		System.out.println("matrix is");
+//		for(int i=1;i<=n;i++) {
+//			for(int j=1;j<=sum;j++) {
+//				System.out.print(s[i][j]);
+//			}
+//			System.out.println(" ");
+//		}
 
 // We solve equations s1+s2 = R, and s1-s2 = diff,
 // We get final equation as s1 = (diff+R)/2 , with this we get the sum of subset value
@@ -46,9 +46,9 @@ public class SubsetCountwithDiff {
 	}
 	public static void main(String[] args) {
 
-		int[] arr = {1,1,2,3};
+		int[] arr = {1,1,1,1,1};
 		int n = arr.length;
-		int diff = 1;
+		int diff = 3;
 		System.out.println("count is: "+ subsetDiffCount(arr, n, diff));
 	}
 
