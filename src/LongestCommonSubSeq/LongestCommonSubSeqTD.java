@@ -48,10 +48,10 @@ public class LongestCommonSubSeqTD {
                 i--;
                 j--;
             }else{
-                if(t[i-1][j]<t[i][j-1]){
-                    j--;
-                }else{
+                if(t[i-1][j]>t[i][j-1]){
                     i--;
+                }else{
+                    j--;
                 }
             }
         }
@@ -59,12 +59,26 @@ public class LongestCommonSubSeqTD {
         System.out.println("order is: "+ v );
     }
     public static void main(String[] args) {
-		String a = "cab";
-		String b = "abac";
+        // Code is same for Longest palindrome subseq in a String 
+        // Simply reverse the String and send it as a second string in LCS method
+        // To get min no of deletions and insertions simply subtract the length 
+        // of the string with the common subseq
+        // Here no of deletions and insertions are equal because we can either 
+        // remove "blab" - 'l' to make it "bab" so no. of insertions = 1 or
+        // add 'l' to make it "blalb" which is also a palindrome
+		String a = "bbabcbcab";
+		String b = "bacbcbabb";
+
+        // Use these Strings for normal LCS case, the above strings for palindrome case
+        String l = "abcda";
+        String m = "abghna";
 		int la = a.length();
 		int lb = b.length();
 		System.out.println(" common sub seq is:" + LCSTD(a,b,la,lb));
-
+        
+        //This is to get the no of insertions and deletions to make a palindrome
+        int t = LCSTD(a,b,la,lb);
+        System.out.println(" no of insertions/deletions to make it palindrome = "+ (a.length()-t) );
 
 	}
 }

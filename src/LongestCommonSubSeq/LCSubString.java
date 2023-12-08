@@ -2,7 +2,6 @@ package LongestCommonSubSeq;
 
 public class LCSubString {
     private static int LCString(String a,String b,int l,int m){
-        int max = 0;
         int[][] t = new int[l+1][m+1];
         for(int i=0;i<=l;i++){
             t[i][0] = 0;
@@ -49,15 +48,22 @@ public class LCSubString {
         }
         String s2 = new StringBuilder(s).reverse().toString();
         System.out.println(s2);
-        return max;
+        return len;
 
     }
     public static void main(String[] args) {
+
+        //To get the longest palindrome substring in a String, simply reverse the string and pass it as a second input string to the lcs substring problem
+        //This gives the common substring in a string after reversing, which is a palindrome, return the max length in the matrix for the mas length of the palindrome
+        String l = "speepks";
+        String m = "skpeeps";
+
+        //This is the normal input for the LCS substring method above inputs are for Longest palindrome substring in a given string
 		String a = "gabdpe";
 		String b = "jabdfle";
 		int la = a.length();
 		int lb = b.length();
-		System.out.println("common sub String is:" + LCString(a,b,la,lb));
+		System.out.println("common sub String is:" + LCString(l,m,la,lb));
 
 	}
 }
